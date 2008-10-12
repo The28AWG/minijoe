@@ -15,7 +15,7 @@ The byte code consists of two types of opcodes:
 Opcodes with variable-length immediate data may be two or three bytes long, with the last bit encoding the length. If the bit is set, the data length is two bytes, otherwise it is a byte
 
 
-|| *Symbol* ||	*Description* ||
+|| *Symbol* || *Description* ||
 || stack    || Denotes the operand stack (Implemented internally as a single Javascript array) ||
 || sp       || The current stack pointer ||
 || imm      || Immediate data (one or two bytes following the instruction opcode, as described above). TODO: distinguish signed/unsigned -Stefan Haustein 10/18/07 4:09 PM ||
@@ -31,7 +31,7 @@ Opcodes with variable-length immediate data may be two or three bytes long, with
 
 || Opcode || Name    || Semantics || Description ||
 || 0x00   || NOP     ||	- 	 || No operation - does nothing  || 
-|| 0x01   || ADD     || stack[sp-2] += stack[sp-1]; sp-- || Addition ||
+|| 0x01   || ADD     || 'stack[sp-2] += stack[sp-1]; sp--' || Addition ||
 || 0x02   || AND     || stack[sp-2] &= stack[sp-1]; sp-- || Binary AND ||
 || 0x03   || APPEND  ||	tmp = stack[sp-2]; tmp[tmp.length] = stack[sp-1]; sp--  || Append to array. Used in literal array initializers. ||
 || 0x04   || ASR     || stack[sp-2] >>= stack[sp-1]; sp-- || Arithmetic shift to the right ||
