@@ -29,7 +29,7 @@ Opcodes with variable-length immediate data may be two or three bytes long, with
 || numbers  || Table with double literals || 
 
 
-|| Opcode || Name    || Semantics || Description ||
+|| *Opcode* || *Name*    || *Semantics* || *Description* ||
 || 0x00   || NOP     ||	- 	 || No operation - does nothing  || 
 || 0x01   || ADD     || `stack[sp-2] += stack[sp-1]; sp--` || Addition ||
 || 0x02   || AND     || `stack[sp-2] &= stack[sp-1]; sp--` || Binary AND ||
@@ -53,7 +53,7 @@ Opcodes with variable-length immediate data may be two or three bytes long, with
 ||0x14 	  || MUL     || `stack[sp-2] *= stack[sp-1]; sp--`  || Multiplication || 
 ||0x15 	  || NEG     || `stack[sp-1] = -stack[sp-1]`  || Negation || 
 ||0x16    || NEW_ARRAY  || `stack[sp] = new Array(); sp++` || Pushes a new array on the stack. ||  
-||0x17    || NEW_OBJ || `stack[sp] = new Object(); sp++`	  || 
+||0x17    || NEW_OBJ || `stack[sp] = new Object(); sp++` ||  || 
 ||0x18 	  || NEW     || `stack[sp-1] = new stack[sp-1]();`  || 	Push a new object || 
 ||0x19 	  || NOT     || `stack[sp-1] = !stack[sp-1]`  || Logical not || 
 ||0x1a    || 	OR   || `stack[sp-2] |= stack[sp-1]; sp--`  || Bitwise or || 
