@@ -31,8 +31,8 @@ Opcodes with variable-length immediate data may be two or three bytes long, with
 
 || Opcode || Name    || Semantics || Description ||
 || 0x00   || NOP     ||	- 	 || No operation - does nothing  || 
-|| 0x01   || ADD     || 'stack[sp-2] += stack[sp-1]; sp--' || Addition ||
-|| 0x02   || AND     || stack[sp-2] &= stack[sp-1]; sp-- || Binary AND ||
+|| 0x01   || ADD     || `stack[sp-2] += stack[sp-1]; sp--` || Addition ||
+|| 0x02   || AND     || `stack[sp-2] &= stack[sp-1]; sp--` || Binary AND ||
 || 0x03   || APPEND  ||	tmp = stack[sp-2]; tmp[tmp.length] = stack[sp-1]; sp--  || Append to array. Used in literal array initializers. ||
 || 0x04   || ASR     || stack[sp-2] >>= stack[sp-1]; sp-- || Arithmetic shift to the right ||
 || 0x05   || ENUM    || stack[sp-1] = stack[sp-1].keys() || Puts a key enumeration on the stack ||
