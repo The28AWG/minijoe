@@ -20,12 +20,12 @@ The following blocks are currently defined:
 || 0x20 || Double Literals ||
 || 0x30 || String Literals ||
 || 0x40 || Regex Literals ||
-|| 0x50 || Function Literals
-|| 0x60 || Variable Names
-|| 0x80 || Byte code
-|| 0xE0 || Line number data
-|| 0xF0 || Debug data
-|| 0xFF || End Marker
+|| 0x50 || Function Literals ||
+|| 0x60 || Variable Names ||
+|| 0x80 || Byte code ||
+|| 0xE0 || Line number data ||
+|| 0xF0 || Debug data ||
+|| 0xFF || End Marker ||
 
 ==Magic==
  
