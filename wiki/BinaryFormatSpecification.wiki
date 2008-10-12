@@ -14,7 +14,7 @@ A MiniJoe binary file consists of a magic number followed by one or more blocks.
 
 The following blocks are currently defined:
 
-|| Type || Description ||
+|| *Type* || *Description* ||
 || 0x00 || Comment ||
 || 0x10 || String Table ||
 || 0x20 || Double Literals ||
@@ -119,13 +119,13 @@ Parameters          :=  uint16    // number of declared parameters
 Flags               :=  uint8     // flags, see below
 Count               :=  uint16    // number of code bytes
 Code                :=  uint8
-}}
+}}}
 
 ==Flag Bits==
 
-|| Bit || Description
-|| 0   || if set, the code does not contain closures or with statements and local variables may be allocated via the stack
-|| 1..7 || reserved
+|| *Bit* || *Description* ||
+|| 0   || if set, the code does not contain closures or with statements and local variables may be allocated via the stack ||
+|| 1..7 || reserved ||
 
 
 If there is a Variable Name Block corresponding to this Code Block, then the number of local variable must be at least equal to the number of variable name mappings (it may be larger, in case the compiler wishes to use local variable slots to store intermediate values, i.e. the results of common subexpressions).
@@ -145,7 +145,7 @@ LineNumber          := uint16
 
 The Length attribute gives the number of [ProgramCounter, LineNumber] pairs in this block. The pairs occur in strictly increasing ProgramCounter order.
 
-===End Marker===
+==End Marker==
 
 {{{
 EndMarker  := 0xFF
