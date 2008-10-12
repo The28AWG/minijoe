@@ -33,7 +33,7 @@ Opcodes with variable-length immediate data may be two or three bytes long, with
 || 0x00   || NOP     ||	- 	 || No operation - does nothing  || 
 || 0x01   || ADD     || stack[sp-2] += stack[sp-1]; sp-- || Addition ||
 || 0x02   || AND     || stack[sp-2] &= stack[sp-1]; sp-- || Binary AND ||
-|| 0x03   || APPEND  ||	tmp = stack[sp-2]; tmp[tmp.length] = stack[sp-1]; sp-- 	Append to array. Used in literal array initializers. ||
+|| 0x03   || APPEND  ||	tmp = stack[sp-2]; tmp[tmp.length] = stack[sp-1]; sp--  || Append to array. Used in literal array initializers. ||
 || 0x04   || ASR     || stack[sp-2] >>= stack[sp-1]; sp-- || Arithmetic shift to the right ||
 || 0x05   || ENUM    || stack[sp-1] = stack[sp-1].keys() || Puts a key enumeration on the stack ||
 || 0x06   || IN      || stack[sp-2] = stack[sp-2] in stack[sp-1]; sp-- || determines whether the element at sp-2 is contained in the element at sp-1 || 
@@ -41,7 +41,7 @@ Opcodes with variable-length immediate data may be two or three bytes long, with
 || 0x08   || DUP     || stack[sp] = stack[sp-1]; sp++  || 	Duplicate element at the top of the stack ||
 || 0x09   || EQEQ    || stack[sp-2] = (stack[sp-2] == stack[sp-1]); sp-- || Comparison ||
 || 0x0a   || CTX_GET || stack[sp-1] = context[stack[sp-1] || Read from current context. || 
-|| 0x0b   || GET 	stack[sp-2] = stack[sp-1][stack[sp-2]]; sp-- || Read member from environment on the stack ||
+|| 0x0b   || GET || stack[sp-2] = stack[sp-1][stack[sp-2]]; sp-- || Read member from environment on the stack ||
 || 0x0c   || CTX     || stack[sp] = context; sp++ || put the current context on the stack. || 
 || 0x0d   || DEL     || stack[sp-2] = delete stack[sp-2].stack[sp-1]; sp-- ||Delete the property denoted by the two elements at the top of the stack ||
 || 0x0e   || GT      || stack[sp-2] = (stack[sp-2] > stack[sp-1]); sp-- || Comparison ||
