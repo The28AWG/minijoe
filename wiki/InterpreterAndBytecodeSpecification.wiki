@@ -64,7 +64,7 @@ Opcodes with variable-length immediate data may be two or three bytes long, with
 ||0x1f    || CTX_SET || `context[stack[sp-1]] = stack[sp-2]; sp--`  || Sets a variable in the current context || 
 ||0x20 	  || SET_KC  || `stack[sp-3][stack[sp-2]] = stack[sp-1]; sp-= 2`  || 	Assign a variable, keep the context on the stack. Used for literal object notation. || 
 ||0x21    || SET     || `stack[sp-1][stack[sp-2]] = stack[sp-3]; sp-= 2` 	 || Assign a variable, keep the assigned value on the stack. Used in regular variable assignments. || 
-||0x22    || SHL     || `stack[sp-2] <<= stack[sp-1]; sp--`  || Bit shift to the left
+||0x22    || SHL     || `stack[sp-2] <<= stack[sp-1]; sp--`  || Bit shift to the left ||
 ||0x23    || SHR     || `stack[sp-2] >>>= stack[sp-1]; sp--`  || Bit shift to the right without sign extension ||  
 ||0x24    || SUB  || `stack[sp-2] -= stack[sp-1]; sp--`  || 	Substraction || 
 ||0x25    || SWAP  || `tmp = stack[sp-2]; stack[sp-2] = stack[sp-1]; stack[sp-1] = tmp` 	 || Swaps the top two values on the stack. || 
@@ -76,11 +76,11 @@ Opcodes with variable-length immediate data may be two or three bytes long, with
 ||0x2B  ||  EQEQEQ || `stack [sp-2] = stack[sp-1] === stack[sp-2]; sp = sp - 1;` || Determines whether the two values on the top of the stack are equal (===)  || 
 ||0x2C  || XOR  || `stack[sp-1] = stack[sp-2] ^ stack[sp-1]; sp = sp - 1;`  ||  Binary XOR operation || 
 ||0x2D || INV || `stack[sp-1] = ~stack[sp-1]` || Binary NOT operation (invert all bits) || 
-||0x2E  ||  WITH_START  || `tmp = new Object(); tmp.__proto__ = stack[sp-1]; tmp.parent = ctx; ctx = tmp; sp = sp - 1;` || Changes the current context to a new Object that has the stack top object set as its prototype and the current context as next Object in its scope chain
+||0x2E  ||  WITH_START  || `tmp = new Object(); tmp.__proto__ = stack[sp-1]; tmp.parent = ctx; ctx = tmp; sp = sp - 1;` || Changes the current context to a new Object that has the stack top object set as its prototype and the current context as next Object in its scope chain ||
 ||0x2F || WITH_END || `ctx = ctx.parent` || Changes the scope chain back to the next object in the scope chain || 
 ||0x30 || ABOVE  || `stack[sp] = stack[sp-3]; sp = sp + 1;`  || Gets the object two below the stack top.  || 
 || ... || || || reserved for future use ||
-|| 0xe8..0xe9 || TRY_CALL  ||  || 
+|| 0xe8..0xe9 || TRY_CALL  ||  || ||
 || 0xea..0xeb || FN || `stack[sp] = new Function(functions[imm], context); sp++` || Pushes a new function constructed from the function literal denoted by the immediate parameter and the current context. ||
 || 0xec..0xed || NUM || `stack[sp] = numbers[imm]; sp++` || Pushes the number literal with the index determined by the immediate parameter ||
 || 0xee..0xef 	|| GO 	|| `pc += imm`	|| Add the value of the immediate operand to the program counter (Program counter position after decoding this instruction) ||
