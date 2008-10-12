@@ -1,1 +1,1 @@
-MiniJoe = "*Mini*mal *J*avasctipt *O*bject *E*nvironment" 
+MiniJoe = Minimal Javasctipt Object Environment 
