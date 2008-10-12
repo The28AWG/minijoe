@@ -1,16 +1,15 @@
-#labels Featured
 =Introduction=
 
-This Wiki page defines the binary file format used by MiniJoe
+This Wiki page defines the binary file format used by !MiniJoe
 
 =Details=
 
-A MiniJoe binary file consists of a stream of bytes, 16-bit, 32-bit and 64-bit values are stored as the required number of bytes in big-endian format, this is the same format as supported by the Java java.io.DataInputStream and java.io.DataOutputStream interfaces.
+A !MiniJoe binary file consists of a stream of bytes, 16-bit, 32-bit and 64-bit values are stored as the required number of bytes in big-endian format, this is the same format as supported by the Java java.io.DataInputStream and java.io.DataOutputStream interfaces.
 
-A MiniJoe binary file consists of a magic number followed by one or more blocks. A block starts with an identifying byte following by the block data. Whilst most blocks have their length as an short immediately following the type byte, the interpretation of the length is block dependent and described below. Some of these blocks may contain other blocks, which in turn may contain more blocks.
+A !MiniJoe binary file consists of a magic number followed by one or more blocks. A block starts with an identifying byte following by the block data. Whilst most blocks have their length as an short immediately following the type byte, the interpretation of the length is block dependent and described below. Some of these blocks may contain other blocks, which in turn may contain more blocks.
 
 
-|| MiniJoe || Magic  Block ||
+|| !MiniJoe || Magic  Block ||
 || Magic   || uint32 ||
 || Block   || Type  Data  ... ||
 || Type    || uint8 ||
@@ -46,7 +45,7 @@ Length       := uint16
 Data         := uint8[Length]
 }}}
 
-This block is used for free-form comments about the MiniJoe binary, its contents are ignored (and possibly discarded) by the client-side runtime. The length field gives the number of data bytes.
+This block is used for free-form comments about the !MiniJoe binary, its contents are ignored (and possibly discarded) by the client-side runtime. The length field gives the number of data bytes.
 
 (The intention is that the length and data is read by a single call to java.io.DataInputStream.readUtf8).
 
@@ -159,7 +158,7 @@ Marks the end of a function literal or of the file.
 
 ==Scoping==
 
-A MiniJoe binary file has two levels or scopes: 'program scope' are blocks are the top level, 'function scope' are blocks within a Function Literal. Note that a Function Literal may contain a Function Literal Block which will contain more Function Literals.
+A !MiniJoe binary file has two levels or scopes: 'program scope' are blocks are the top level, 'function scope' are blocks within a Function Literal. Note that a Function Literal may contain a Function Literal Block which will contain more Function Literals.
 
 At each level no more than one block of each type is allowed. Except were described below, the order of blocks within each scope doesn't matter, however the order would normally be in the order they are described above.
 
