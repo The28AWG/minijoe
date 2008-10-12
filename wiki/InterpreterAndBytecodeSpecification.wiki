@@ -1,8 +1,7 @@
 #labels Featured,Phase-Design
-
 = Introduction = 
 
-This Wiki Page specifies the MiniJoe byte code and interpreter.
+This Wiki Page specifies the !MiniJoe byte code and interpreter.
 
 = Details =
 
