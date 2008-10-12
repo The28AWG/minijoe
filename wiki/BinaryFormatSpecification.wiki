@@ -1,5 +1,7 @@
 #labels Featured
-=MiniJoe Binary Format Specification=
+=Summary=
+
+=Description=
 
 A MiniJoe binary file consists of a stream of bytes, 16-bit, 32-bit and 64-bit values are stored as the required number of bytes in big-endian format, this is the same format as supported by the Java java.io.DataInputStream and java.io.DataOutputStream interfaces.
 
