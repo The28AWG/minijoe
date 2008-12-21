@@ -1,4 +1,6 @@
+#summary Definition of the binary file format used by MiniJoe
 #labels Featured,Phase-Design
+
 =Introduction=
 
 This Wiki page defines the binary file format used by !MiniJoe
