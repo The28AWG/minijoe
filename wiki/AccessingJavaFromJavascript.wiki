@@ -33,9 +33,11 @@ Note: `addNative` is a convenience method for `addVar(name, new JsFunction(int i
 
 ==4. Implement the Java Constructor==
 
+{{{
 public HelloWorld() {
     super(HELLOWORLD_PROTOTYPE);
 }
+}}}
 
 ==5. Implement the Dispatcher==
 
