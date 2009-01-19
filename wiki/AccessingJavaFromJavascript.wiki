@@ -6,7 +6,7 @@ This page describes how to make a Java class accessible from Javascript in !Mini
 
 = Details =
 
-==1. Create a subclass of JsObject==
+==1. Create a subclass of !JsObject==
 
 {{{
 class HelloWorld extends JsObject {
@@ -14,7 +14,7 @@ class HelloWorld extends JsObject {
 
 ==2. Define integer constants for all methods and variables that need to be exposed==
 
-The constantants should start above 100 since lower values are reserved for JsObject itself.
+The constantants should start above 100 since lower values are reserved for !JsObject itself.
 
 {{{
 static final int ID_PRINT = 100;
@@ -61,10 +61,3 @@ The dispatcher is needed since CLDC does not provide sufficient reflection capab
 ==6. Register the Java Class with the Javascript Environment==
 
 TBD
-
-
- 
-
-
-
- public void evalNative(int id, JsArray stack, int sp, int parCount) {
