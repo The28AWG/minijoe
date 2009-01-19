@@ -1,0 +1,68 @@
+#summary This page describes how to make a Java class accessible from Javascript
+
+= Introduction =
+
+This page describes how to make a Java class accessible from Javascript in !MiniJoe.
+
+= Details =
+
+==1. Create a subclass of JsObject==
+
+{{{
+class HelloWorld extends JsObject {
+}}}
+
+==2. Define integer constants for all methods and variables that need to be exposed==
+
+The constantants should start above 100 since lower values are reserved for JsObject itself.
+
+{{{
+static final int ID_PRINT = 100;
+}}}
+
+==3. Create the Prototype Instance==
+
+Register all exposed methods using the method `addNative(String name, int id, int parameterCount)`. A parameter count of -1 indicates a member variable.
+
+{{{
+static final JsObject HELLOWORLD_PROTOTYPE = new JsObject(JsObject.OBJECT_PROTOTYPE)
+  .addNative("print", ID_PRINT, 0);
+}}}
+
+Note: `addNative` is a convenience method for `addVar(name, new JsFunction(int id, int parameterCount)` 
+
+==4. Implement the Java Constructor==
+
+public HelloWorld() {
+    super(HELLOWORLD_PROTOTYPE);
+}
+
+==5. Implement the Dispatcher==
+
+
+The dispatcher is needed since CLDC does not provide sufficient reflection capabilities to call methods by name. 
+
+{{{
+ public void evalNative(int id, JsArray stack, int sp, int parCount){
+    switch(id){
+      case ID_PRINT:
+        System.out.println("Hello World");
+        break;
+        
+    default:
+      super.evalNative(id, stack, sp, parCount);
+    }
+  }
+}}}
+
+
+==6. Register the Java Class with the Javascript Environment==
+
+TBD
+
+
+ 
+
+
+
+ public void evalNative(int id, JsArray stack, int sp, int parCount) {
