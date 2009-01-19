@@ -14,4 +14,4 @@ This page describes the differences between !MiniJoe and the ECMA-262 Standard
   * !MiniJoe may enforce the Javascript Syntax stricter than other ECMA-262 implementations
   * The methods for handling URLs are missing. This should be simple to fix, though.
 
-All other differences to ECMA 262 can be considered bugs in !MiniJoe
+If there are other differences to ECMA 262 in !MiniJoe, they should be filed as issues.
