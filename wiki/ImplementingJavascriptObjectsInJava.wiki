@@ -7,7 +7,7 @@ This page describes how to implement Javascript objects in Java
 
 = Details =
 
-The wiki page "AccessingJavaFromJavascript" describes how to create a JsObject subclass to make Java methods accessible from Javascript. 
+The wiki page "AccessingJavaFromJavascript" describes how to create a !JsObject subclass to make Java methods accessible from Javascript. 
 
 To implement whole Javascript objects in Java, some additional steps are required:
 
@@ -16,7 +16,7 @@ To implement whole Javascript objects in Java, some additional steps are require
   # A factory
   # Register the factory with the global environment
 
-So if we want to transform the global static counter created in AccessingJavaFromJavascript into a counter object we can instantiate from Javascript, we need to add create a prototype and to replace the previous constructor with a prototype-based constructor. All method IDs need to be registered with the prototype now:
+So if we want to transform the global static counter created in "AccessingJavaFromJavascript" into a counter object we can instantiate from Javascript, we need to add create a prototype and to replace the previous constructor with a prototype-based constructor. All method IDs need to be registered with the prototype now:
 
 {{{
   public static final JsObject COUNTER_PROTOTYPE = new Counter(OBJECT_PROTOTYPE)
