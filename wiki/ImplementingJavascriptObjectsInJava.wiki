@@ -1,4 +1,4 @@
-# This page describes how to implement Javascript objects in Java
+#summary This page describes how to implement Javascript objects in Java
 
 = Introduction =
 
