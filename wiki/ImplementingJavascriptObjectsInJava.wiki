@@ -16,7 +16,7 @@ To implement whole Javascript objects in Java, some additional steps are require
   # A factory
   # Register the factory with the global environment
 
-So if we want to transform the global static counter from AccessingJavaFromJavascript into a counter object we can instantiate from Javascript, we need to replace the previous constructor with a prototype and prototype-based constructor. Note that the method registration moves to the prototype:
+So if we want to transform the global static counter created in AccessingJavaFromJavascript into a counter object we can instantiate from Javascript, we need to add create a prototype and to replace the previous constructor with a prototype-based constructor. All method IDs need to be registered with the prototype now:
 
 {{{
   public static final JsObject COUNTER_PROTOTYPE = new Counter(OBJECT_PROTOTYPE)
@@ -29,7 +29,7 @@ So if we want to transform the global static counter from AccessingJavaFromJavas
 
 The eval method and method IDs do not need to be changed.
 
-Note that the prototype is created as an instance of the class we are using for the instances, too. This is strictly necessary only if we need to support static Javascript methods.
+Note that in the example, the prototype is an instance of the class we will be using for the instances as well. This is strictly necessary only if we need to support static Javascript methods.
 
 We still need a factory for the new object and to register it with the global environment. Here, we do both tasks in a single class:
 
@@ -60,6 +60,7 @@ The last argument in the factory registration call is the method id of the const
 
 When using MySystem.createGlobal() to create the global environment (instead of JsSystem), a new counter can now be created in Javascript with "new Counter()". 
 
+The factory should be reused for all custom classes if feasible in order to avoid unnecessary overhead. 
 
 == Registering Subclasses == 
 
