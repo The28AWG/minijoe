@@ -1,8 +1,8 @@
-#summary This page describes how to access Java methods from JavaScript
+#summary This page describes how to access Java methods from Javascript
 
 = Introduction =
 
-This page describes how to access Java methods from JavaScript
+This page describes how to access Java methods from Javascript
 
 
 = Details =
