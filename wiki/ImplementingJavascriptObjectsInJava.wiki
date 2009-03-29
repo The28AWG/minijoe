@@ -7,7 +7,7 @@ This page describes how to implement Javascript objects in Java
 
 = Details =
 
-The AccessingJavaFromJavascript wiki page describes how to create a JsObject subclass to make Java methods accessible from Javascript. 
+The wiki page "AccessingJavaFromJavascript" describes how to create a JsObject subclass to make Java methods accessible from Javascript. 
 
 To implement whole Javascript objects in Java, some additional steps are required:
 
