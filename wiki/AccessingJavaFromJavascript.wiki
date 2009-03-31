@@ -1,4 +1,5 @@
 #summary This page describes how to access Java methods from Javascript
+#labels Featured
 
 = Introduction =
 
@@ -50,6 +51,8 @@ The dispatcher is needed since CLDC does not provide sufficient reflection capab
   }
 }}}
 
+*Note*: Always add a default case that calls super.evalNative() -- otherwise, inherited methods won't work
+
 
 ==4. Implement the Java Constructor==
 
@@ -76,6 +79,5 @@ Add the following line to the constructor of the shell example (replacing the gl
 
 Now, it should be possible to test our counter using `add()` calls in the shell.
 
-Creating Javascript objects based on a Java implementation is similar, but requires some additional steps.
+Creating Javascript objects based on a Java implementation is similar, but requires some additional steps (see "mplementingJavascriptObjectsInJava")
 
-TODO(haustein): Add a similar page for objects.
