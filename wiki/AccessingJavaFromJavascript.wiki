@@ -79,5 +79,4 @@ Add the following line to the constructor of the shell example (replacing the gl
 
 Now, it should be possible to test our counter using `add()` calls in the shell.
 
-Creating Javascript objects based on a Java implementation is similar, but requires some additional steps (see "mplementingJavascriptObjectsInJava")
-
+Creating Javascript objects based on a Java implementation is similar, but requires some additional steps (see "ImplementingJavascriptObjectsInJava")
