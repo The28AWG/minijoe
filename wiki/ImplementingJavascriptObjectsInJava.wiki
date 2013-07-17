@@ -40,7 +40,7 @@ public class MySystem implements JsObjectFactory {
   static MySystem instance = new MySystem();
 
   public static JsObject createGlobal(){
-    JsObject global = JsSystem.createGlobal;
+    JsObject global = JsSystem.createGlobal();
     global.addVar("Counter", new JsFunction(instance, JsSystem.FACTORY_ID_COUNTER, 
         JsDate.DATE_PROTOTYPE, JsObject.ID_NOOP, 0));
     return global;
